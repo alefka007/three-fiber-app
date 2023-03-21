@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--noto-serif);
+  font-weight: 400;
+}
+
+/*----------------fonts----------------------------*/
+@font-face {
+  font-family: "Noto Serif", monospace;
+  src: url("./fonts/NotoSerif-Bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Serif", monospace;
+  src: url("./fonts/NotoSerif-BoldItalic.woff") format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Noto Serif", monospace;
+  src: url("./fonts/NotoSerif-Italic.woff") format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Noto Serif", monospace;
+  src: url("./fonts/NotoSerif-Regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*----------------variables----------------------------*/
+:root {
+  --noto-serif: "Noto Serif", monospace;
+  --box-shadow: 0 2px 5px #acacac;
+  --hover-color: #acacf1;
+  --active-color: #8c8cf3;
+}
