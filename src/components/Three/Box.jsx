@@ -1,16 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber';
 import { MathUtils } from 'three';
 
 const Box = (props) => {
     const mesh = useRef(null);
+
     const [hover, setHover] = useState(false);
     const [clicked, setClicked] = useState(false);
+    const [positionY, setPositionY] = useState(0);
+
 
     useFrame((state, delta) => {
         let meshPos = mesh.current.position;
+
         meshPos.y = MathUtils.lerp(
-            mesh.current.position.y, clicked ? meshPos.y = 10 : meshPos.y, 0.05
+            meshPos.y, clicked ? positionY : meshPos.y, 0.05
         );
     })
 
@@ -26,7 +30,10 @@ const Box = (props) => {
 
     const onClickHandler = (e) => {
         e.stopPropagation();
-        setClicked(!clicked);
+
+        let posY = e.eventObject.position.y
+        setPositionY(posY + 10);
+        setClicked( true);
     }
 
     return (
